@@ -1,6 +1,6 @@
 <template>
   <div class="w-full flex flex-row h-full tablet:hidden mobile:hidden">
-    <div class="w-6/12 h-full flex flex-col align-middle justify-end">
+    <div class="desktop:w-6/12 h-full flex flex-col align-middle justify-end">
       <div class="h-auto">
         <div class="w-full min-h-80">
           <div class="w-auto">
@@ -9,49 +9,44 @@
             <p class="crew-description h-auto w-auto">{{ description }}</p>
           </div>
         </div>
-        <CrewOptions :isActive="active" :length="length" @change-active="changeActive"></CrewOptions>
+        <CrewOptions :isActive="active" :length="length" @change-active="handleChangeActive"></CrewOptions>
       </div>
     </div>
-    <div class="w-6/12 h-full flex justify-end align-bottom">
-      <img :src="src" alt="person" class="h-full desktop:max-h-[94%] tablet:max-h-[80%] mobile:max-h-[70%]  self-end">
+    <div class="desktop:w-6/12 h-full flex justify-end align-bottom">
+      <img :src="src" alt="person" class="desktop:max-h-[94%] tablet:max-h-[80%] mobile:max-h-[70%]  self-end">
     </div>
   </div>
-  <div class="w-full h-auto mt-8 flex flex-col justify-center desktop:hidden">
+  <div class="w-full h-auto mt-8 flex flex-col justify-center align-middle desktop:hidden">
     <div class="w-full h-auto flex justify-center py-2 mb-6">
       <div class="w-full">
         <h3 class="crew-header h-auto w-auto text-center">{{ header }}</h3>
         <h2 class="crew-name h-auto w-auto text-center">{{ name }}</h2>
         <p class="crew-description h-auto w-auto text-center">{{ description }}</p>
-        <CrewOptions :isActive="active" :length="length" @change-active="changeActive"></CrewOptions>
+        <CrewOptions :isActive="active" :length="length" @change-active="handleChangeActive"></CrewOptions>
       </div>
     </div>
     <div class="w-full h-full flex justify-center">
-      <img :src="src" alt="person" class="h-full desktop:max-h-[94%] tablet:max-h-[80%] mobile:max-h-[70%] ">
+      <img :src="src" alt="person" class="desktop:max-h-[94%] tablet:max-h-[80%] mobile:max-h-[70%] ">
     </div>
   </div>
 </template>
 
-<script>
+<script setup>
 import CrewOptions from './CrewOptions/CrewOptions.vue';
 
-export default {
-  name: 'CrewProfile',
-  components: {
-    CrewOptions,
-  },
-  props: {
-    active: Number,
-    length: Number,
-    name: String,
-    description: String,
-    header: String,
-    src: String
-  },
-  methods: {
-    changeActive(index) {
-      this.$emit('change-active', index);
-    }
-  }
+const props = defineProps({
+  active: Number,
+  length: Number,
+  name: String,
+  description: String,
+  header: String,
+  src: String
+});
+
+const emit = defineEmits(['change-active']);
+
+function handleChangeActive(index) {
+  emit('change-active', index);
 }
 </script>
 

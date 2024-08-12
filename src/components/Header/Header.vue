@@ -6,7 +6,7 @@
     <div
       class="flex gap-12 py-9 font-barlow-condensed text-white text-base pl-40 pr-16 backdrop-blur-4xl  relative before:content-[''] before:w-4/5 before:h-[1px] before:absolute before:-left-3/4 before:top-1/2 before:-translate-y-1/2 before:bg-[#979797] tablet:before:hidden tablet:pl-28 tablet:pr-10 mobile:hidden"
     >
-    
+
     <RouterLink v-for="obj in data" class="tracking-[2px] cursor-pointer" :to="obj.to"><span class="font-bold tracking-[2.7px] tablet:hidden">{{ obj.id }}</span>
       {{ obj.name }}</RouterLink>
 

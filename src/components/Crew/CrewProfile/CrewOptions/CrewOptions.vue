@@ -6,23 +6,18 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'CrewOptions',
-    props: {
-        isActive: Number,
-        length: Number
-    },
-    data() {
-        return {
-            indexes: Array.from({ length: this.length }, (_, i) => i)
-        }
-    },
-    methods: {
-        changeActive(index) {
-            this.$emit('change-active', index);
-        }
-    }
+<script setup>
+const props = defineProps({
+    isActive: Number,
+    length: Number
+});
+
+const indexes = Array.from({ length: props.length }, (_, i) => i);
+
+const emit = defineEmits(['change-active']);
+
+function changeActive(index) {
+    emit('change-active', index);
 }
 </script>
 
