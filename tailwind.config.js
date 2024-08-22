@@ -22,7 +22,6 @@ export default {
     screens: {
       "tablet": { max: "768px" },
       "mobile": { max: "375px" },
-      "desktop": { min: "769px" },
     },
   },
   plugins: [],

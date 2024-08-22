@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full flex flex-row h-full tablet:hidden mobile:hidden">
-    <div class="desktop:w-6/12 h-full flex flex-col align-middle justify-end">
+  <div class="flex flex-row h-full w-full visible tablet:hidden mobile:hidden">
+    <div class="w-6/12 h-full flex flex-col align-middle justify-end">
       <div class="h-auto">
         <div class="w-full min-h-80">
           <div class="w-auto">
@@ -12,11 +12,11 @@
         <CrewOptions :isActive="active" :length="length" @change-active="handleChangeActive"></CrewOptions>
       </div>
     </div>
-    <div class="desktop:w-6/12 h-full flex justify-end align-bottom">
-      <img :src="src" alt="person" class="desktop:max-h-[94%] tablet:max-h-[80%] mobile:max-h-[70%]  self-end">
+    <div class="w-6/12 h-full flex justify-end align-bottom">
+      <img :src="src" alt="person" class="max-h-[94%] tablet:max-h-[80%] mobile:max-h-[70%]  self-end">
     </div>
   </div>
-  <div class="w-full h-auto mt-8 flex flex-col justify-center align-middle desktop:hidden">
+  <div class="w-full h-auto flex-col justify-center align-middle invisible tablet:visible mobile:visible">
     <div class="w-full h-auto flex justify-center py-2 mb-6">
       <div class="w-full">
         <h3 class="crew-header h-auto w-auto text-center">{{ header }}</h3>
@@ -25,8 +25,8 @@
         <CrewOptions :isActive="active" :length="length" @change-active="handleChangeActive"></CrewOptions>
       </div>
     </div>
-    <div class="w-full h-full flex justify-center">
-      <img :src="src" alt="person" class="desktop:max-h-[94%] tablet:max-h-[80%] mobile:max-h-[70%] ">
+    <div class="w-full h-auto flex justify-center">
+      <img :src="src" alt="person" class="max-h-[94%] tablet:max-h-[80%] mobile:max-h-[70%] ">
     </div>
   </div>
 </template>
