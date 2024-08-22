@@ -1,5 +1,5 @@
 <template>
-  <div class="p-0 m-0 flex flex-col w-full h-screen overflow-hidden tablet:overflow-auto mobile:overflow-auto" style="background-image: url('src/assets/crew/background-crew-desktop.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
+  <div class="p-0 m-0 flex flex-col w-full h-screen overflow-hidden tablet:overflow-x-hidden tablet:overflow-y-auto mobile:overflow-x-hidden mobile:overflow-y-auto" style="background-image: url('src/assets/crew/background-crew-desktop.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
     <Header></Header>
     <div class="flex justify-center tablet:pt-5 mobile:pt-5 pb-auto tablet:pb-0 mobile:pb-8 w-full">
       <div class="w-[70%] max-w-[880px] tablet:w-[90vw] mobile:w-[85vw] max-h-[71vh] tablet:max-h-fit mobile:max-h-fit h-auto pb-9 tablet:pb-0 mobile:pb-0 flex flex-col justify-between">
